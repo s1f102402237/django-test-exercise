@@ -13,8 +13,10 @@
         <div class="main-layout-container">
 
             <div class="left-column">
-                <h1>Sample To Do Application</h1>
-                <p>You can submit tasks from the following form.</p>
+                <div class="header">
+                    <h1>Daily Tasks</h1>
+                    <p><span>All your tasks, at a glance.</span></p>
+                </div>
 
                 <form action="{% url 'index' %}" method="post" onsubmit="return validateForm();">
                     {% csrf_token %}

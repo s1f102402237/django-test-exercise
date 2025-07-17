@@ -8,6 +8,33 @@ body {
   padding: 25px; 
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+.header h1 {
+    font-family: 'Oswald', sans-serif; 
+    color: #3498db; 
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.header p {
+    display: flex; 
+    align-items: center;
+    text-align: center;
+    color: #bdc3c7;
+}
+
+.header p::before,
+.header p::after {
+    content: '';
+    flex-grow: 1; 
+    height: 1px; 
+    background: #4e6a85; 
+}
+
+.header p span {
+    padding: 0 15px;
+}
+
 h1,h2,h3,h4,h5,h6 {
   font-weight: 700;
 }
