@@ -123,32 +123,39 @@ button[type="submit"]:hover {
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
 }
 
 .task-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
-
-.task-card h2 a {
-  color: #ecf0f1;
   text-decoration: none;
 }
 
-.task-card h2 a:hover {
-  color: #3498db;
+.task-card-a, .task-card-a:hover {
+    text-decoration: none;
+}
+
+.task-card h2 {
+    color: #ecf0f1;
+    margin-top: 0; 
+    transition: color 0.3s ease;
+}
+
+.task-card:hover h2 {
+    color: #3498db;
 }
 
 .task-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0 0 0;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
 }
 
 .task-card li {
-  margin-bottom: 8px;
-  color: #bdc3c7;
-  font-size: 0.95em;
+    margin-bottom: 8px;
+    color: #bdc3c7;
+    font-size: 0.95em;
 }
 
 @media (max-width: 992px) {
