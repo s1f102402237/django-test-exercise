@@ -161,10 +161,11 @@ button[type="submit"]:hover {
 @media (max-width: 992px) {
   .main-layout-container {
     flex-direction: column;
-    gap: 0;
   }
 
   .left-column {
+    position: static;
+    flex-basis: auto; 
     width: 100%;
     margin-bottom: 30px;
   }
