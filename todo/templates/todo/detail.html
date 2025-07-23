@@ -1,33 +1,51 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="ja">
+    <head>
+        <title>{{ task.title }} - To Do Application</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="INIAD">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+    </head>
 
-  <head>
-    <title>To Do Application</title>
-    <meta charset="UTF-8">
-    <meta name="author" content="INIAD">
-  </head>
-
-  <body>
-    <h1>{{ task.title }}</h1>
-    <ul>
-      <li>Posted at: {{ task.posted_at }}</li>
-      {% if task.due_at %}
-      <li>Due at: {{ task.due_at }}</li>
-      {% endif %}
-      {% if task.completed %}
-      <li>Status: Completed</li>
-      {% else %}
-      <li>Status: Not Completed</li>
-      {% endif %}
-    </ul>
-
-    <div>
-      <a href="{% url 'index' %}">Top</a>
-      | <a href="{% url 'update' task.id %}">Edit</a>
-      | <a href="{% url 'delete' task.id %}">Delete</a>
-      | <a href="{% url 'close' task.id %}">Close</a>
-    </div>
-  </body>
-
+    <body>
+        <div class="container">
+            <a href="{% url 'index' %}" class="back-link">← All Tasks</a>
+            <div class="task-card">
+                <div class="card-header">
+                    <h2>{{ task.title }}</h2>
+                </div>
+                <div class="card-body">
+                    <ul class="task-details">
+                        <li>
+                            <span>Posted at</span>
+                            <strong>{{ task.posted_at }}</strong>
+                        </li>
+                        {% if task.due_at %}
+                        <li>
+                            <span>Due at</span>
+                            <strong>{{ task.due_at }}</strong>
+                        </li>
+                        {% endif %}
+                        <li>
+                            <span>Status</span>
+                            {% if task.completed %}
+                            <span class="status-badge completed">Completed</span>
+                            {% else %}
+                            <span class="status-badge not-completed">Not Completed</span>
+                            {% endif %}
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'update' task.id %}" class="btn btn-edit">Edit</a>
+                    {% if not task.completed %}
+                    <a href="{% url 'close' task.id %}" class="btn btn-close">Close Task</a>
+                    {% endif %}
+                    <a href="{% url 'delete' task.id %}" class="btn btn-delete">Delete</a>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
