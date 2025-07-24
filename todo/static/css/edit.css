@@ -154,3 +154,125 @@ input[type="checkbox"] {
     border-color: #2980b9;
     transform: translateY(-2px);
 }
+
+/* --- ライトモード --- */
+
+body.light-mode {
+  background-color: #f4f6f8;
+  color: #212529;
+}
+
+body.light-mode .header h1 {
+  color: #2980b9;
+}
+
+body.light-mode .header p {
+  color: #6c757d;
+}
+
+body.light-mode .header p::before,
+body.light-mode .header p::after {
+  background: #dee2e6;
+}
+
+body.light-mode a {
+  color: #007bff;
+}
+
+body.light-mode a:hover {
+  color: #0056b3;
+}
+
+body.light-mode form {
+  background-color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode label {
+  color: #495057;
+}
+
+body.light-mode input[type="text"],
+body.light-mode input[type="datetime-local"] {
+  background-color: #ffffff;
+  color: #212529;
+  border: 1px solid #ced4da;
+}
+
+body.light-mode input[type="text"]:focus,
+body.light-mode input[type="datetime-local"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+}
+
+body.light-mode button[type="submit"] {
+  background-color: #007bff;
+}
+
+body.light-mode button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+body.light-mode .sort-links a {
+  color: #007bff;
+}
+
+body.light-mode .task-card {
+  background-color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .task-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .task-card h2 {
+  color: #343a40;
+}
+
+body.light-mode .task-card:hover h2 {
+  color: #007bff;
+}
+
+body.light-mode .task-card li {
+  color: #6c757d;
+}
+
+.theme-toggle-button {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  z-index: 1000;
+  cursor: pointer;
+  background-color: #34495e;
+  border: 1px solid #4e6a85;
+  border-radius: 9999px;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle-button:hover {
+  background-color: #4a6278;
+}
+
+body.light-mode .theme-toggle-button {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+}
+
+body.light-mode .theme-toggle-button:hover {
+  background-color: #f0f0f0;
+}
+
+.theme-toggle-button svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #ecf0f1;
+}
+
+body.light-mode .theme-toggle-button svg {
+  color: #212529;
+}
