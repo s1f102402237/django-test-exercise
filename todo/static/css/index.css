@@ -323,3 +323,25 @@ body.light-mode .theme-toggle-button:hover {
 body.light-mode .theme-toggle-button svg {
   color: #212529;
 }
+
+.no-tasks-message {
+    grid-column: 1 / -1;
+    background-color: #34495e;
+    padding: 40px 25px;
+    border-radius: 12px;
+    text-align: center;
+    color: #bdc3c7;
+    border: 1px dashed #4e6a85;
+}
+
+.no-tasks-message h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #ecf0f1;
+    font-size: 1.4em;
+}
+
+.no-tasks-message p {
+    margin-bottom: 0;
+    font-size: 1em;
+}
