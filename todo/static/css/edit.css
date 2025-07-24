@@ -7,6 +7,7 @@ body {
     margin: 0;
     padding: 25px;
     box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -34,11 +35,13 @@ body {
     border: 1px solid #3a4d61;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    transition: background 0.3s, border 0.3s, box-shadow 0.3s;
 }
 
 .card-header {
     padding: 25px 30px;
     border-bottom: 1px solid #3a4d61;
+    transition: border-bottom 0.3s;
 }
 
 .card-header h2 {
@@ -46,6 +49,7 @@ body {
     font-size: 2em;
     font-weight: 700;
     color: #ffffff;
+    transition: color 0.3s;
 }
 
 .card-body {
@@ -66,6 +70,7 @@ body {
     font-size: 1em;
     color: #bdc3c7;
     font-weight: 500;
+    transition: color 0.3s;
 }
 
 .form-group input[type="text"],
@@ -78,7 +83,7 @@ body {
     color: #ecf0f1;
     font-size: 1em;
     box-sizing: border-box;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s, color 0.3s;
 }
 
 .form-group input[type="text"]:focus,
@@ -91,7 +96,6 @@ body {
 .form-group input#dueInput::-webkit-calendar-picker-indicator {
     filter: invert(1);
 }
-
 
 .form-group-checkbox {
     display: flex;
@@ -109,6 +113,7 @@ body {
     border: 1px solid #7f8c8d;
     width: 100%;
     box-sizing: border-box;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 input[type="checkbox"] {
@@ -121,8 +126,9 @@ input[type="checkbox"] {
 .checkbox-label {
     color: #e0e0e0;
     cursor: pointer;
-    font-weight: 400 !important; 
+    font-weight: 400 !important;
     margin-bottom: 0 !important;
+    transition: color 0.3s;
 }
 
 .card-footer {
@@ -130,6 +136,7 @@ input[type="checkbox"] {
     padding: 20px 30px;
     display: flex;
     justify-content: flex-end;
+    transition: background-color 0.3s;
 }
 
 .btn {
@@ -155,124 +162,107 @@ input[type="checkbox"] {
     transform: translateY(-2px);
 }
 
-/* --- ライトモード --- */
-
-body.light-mode {
-  background-color: #f4f6f8;
-  color: #212529;
-}
-
-body.light-mode .header h1 {
-  color: #2980b9;
-}
-
-body.light-mode .header p {
-  color: #6c757d;
-}
-
-body.light-mode .header p::before,
-body.light-mode .header p::after {
-  background: #dee2e6;
-}
-
-body.light-mode a {
-  color: #007bff;
-}
-
-body.light-mode a:hover {
-  color: #0056b3;
-}
-
-body.light-mode form {
-  background-color: #ffffff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-body.light-mode label {
-  color: #495057;
-}
-
-body.light-mode input[type="text"],
-body.light-mode input[type="datetime-local"] {
-  background-color: #ffffff;
-  color: #212529;
-  border: 1px solid #ced4da;
-}
-
-body.light-mode input[type="text"]:focus,
-body.light-mode input[type="datetime-local"]:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
-}
-
-body.light-mode button[type="submit"] {
-  background-color: #007bff;
-}
-
-body.light-mode button[type="submit"]:hover {
-  background-color: #0056b3;
-}
-
-body.light-mode .sort-links a {
-  color: #007bff;
-}
-
-body.light-mode .task-card {
-  background-color: #ffffff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-body.light-mode .task-card:hover {
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-body.light-mode .task-card h2 {
-  color: #343a40;
-}
-
-body.light-mode .task-card:hover h2 {
-  color: #007bff;
-}
-
-body.light-mode .task-card li {
-  color: #6c757d;
-}
-
+/* --- テーマ切り替えボタン --- */
 .theme-toggle-button {
-  position: fixed;
-  top: 25px;
-  right: 25px;
-  z-index: 1000;
-  cursor: pointer;
-  background-color: #34495e;
-  border: 1px solid #4e6a85;
-  border-radius: 9999px;
-  padding: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s ease;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    background-color: #2c3e50;
+    border: 1px solid #3a4d61;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+.theme-toggle-button:hover {
+    background-color: #34495e;
+}
+.theme-toggle-button svg {
+    width: 24px;
+    height: 24px;
+    color: #e0e0e0;
+}
+.hidden {
+    display: none;
 }
 
-.theme-toggle-button:hover {
-  background-color: #4a6278;
+/* --- ライトモード --- */
+body.light-mode {
+    background-color: #f0f4f8;
+    color: #212529;
+}
+
+body.light-mode .back-link {
+    color: #007bff;
+}
+body.light-mode .back-link:hover {
+    color: #0056b3;
+}
+
+body.light-mode .edit-form-card {
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .card-header {
+    border-bottom: 1px solid #dee2e6;
+}
+
+body.light-mode .card-header h2 {
+    color: #343a40;
+}
+
+body.light-mode .form-group label {
+    color: #495057;
+}
+
+body.light-mode .form-group input[type="text"],
+body.light-mode .form-group input[type="datetime-local"] {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    color: #495057;
+}
+
+body.light-mode .form-group input[type="text"]:focus,
+body.light-mode .form-group input[type="datetime-local"]:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+body.light-mode .form-group input#dueInput::-webkit-calendar-picker-indicator {
+    filter: none;
+}
+
+body.light-mode .checkbox-wrapper {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+}
+
+body.light-mode .checkbox-label {
+    color: #495057;
+}
+
+body.light-mode .card-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
 }
 
 body.light-mode .theme-toggle-button {
-  background-color: #ffffff;
-  border: 1px solid #dee2e6;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
 }
 
 body.light-mode .theme-toggle-button:hover {
-  background-color: #f0f0f0;
-}
-
-.theme-toggle-button svg {
-  width: 1.5rem;
-  height: 1.5rem;
-  color: #ecf0f1;
+    background-color: #f0f0f0;
 }
 
 body.light-mode .theme-toggle-button svg {
-  color: #212529;
+    color: #212529;
 }
