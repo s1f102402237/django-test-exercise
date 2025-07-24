@@ -205,7 +205,7 @@ button[type="submit"]:hover {
 /* --- ライトモード --- */
 
 body.light-mode {
-  background-color: #f4f6f8;
+  background-color: #e2feff;
   color: #212529;
 }
 
