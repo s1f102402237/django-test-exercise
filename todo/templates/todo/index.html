@@ -66,6 +66,11 @@
                             {% endif %}
                         </ul>
                     </div></a>
+                    {% empty %}
+                    <div class="no-tasks-message">
+                        <h3>No tasks available.</h3>
+                        <p>Start by adding a new task!</p>
+                    </div>
                     {% endfor %}
                 </div>
             </div>
